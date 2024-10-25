@@ -19,8 +19,8 @@ require "lazy_setup"
 require "polish"
 
 -- Set tab size to 2 spaces
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 -- Ensure proper indentation for new lines
@@ -33,33 +33,33 @@ vim.fn.sign_define("DapStopped", { text = "►", texthl = "", linehl = "", numhl
 vim.fn.sign_define("DapBreakpointRejected", { text = "R", texthl = "", linehl = "", numhl = "" })
 
 -- Function to set transparency for all window elements
-local function set_transparent_background()
-  local highlight_groups = {
-    "Normal",
-    "NonText",
-    "LineNr",
-    "Folded",
-    "EndOfBuffer",
-    "SignColumn",
-    "StatusLine",
-    "StatusLineNC",
-    "VertSplit",
-    "TabLine",
-    "TabLineFill",
-    "TabLineSel",
-    "CursorLineNR",
-    "Pmenu",
-    "PmenuSel",
-  }
-  for _, group in ipairs(highlight_groups) do
-    vim.cmd("highlight " .. group .. " guibg=NONE ctermbg=NONE")
-  end
-end
+--local function set_transparent_background()
+--  local highlight_groups = {
+--    "Normal",
+--    "NonText",
+--    "LineNr",
+--    "Folded",
+--    "EndOfBuffer",
+--    "SignColumn",
+--    "StatusLine",
+--    "StatusLineNC",
+--    "VertSplit",
+--    "TabLine",
+--    "TabLineFill",
+--    "TabLineSel",
+--    "CursorLineNR",
+--    "Pmenu",
+--    "PmenuSel",
+--  }
+--  for _, group in ipairs(highlight_groups) do
+--    vim.cmd("highlight " .. group .. " guibg=NONE ctermbg=NONE")
+--  end
+--end
 
 -- Set transparency initially
-set_transparent_background()
+--set_transparent_background()
 
 -- Ensure transparency is applied on colorscheme change
-vim.api.nvim_create_autocmd("ColorScheme", {
-  callback = set_transparent_background,
-})
+--vim.api.nvim_create_autocmd("ColorScheme", {
+--  callback = set_transparent_background,
+--})
