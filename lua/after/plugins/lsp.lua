@@ -112,7 +112,9 @@ local lsp_zero = require("lsp-zero")
 local cmp = require('cmp')
 cmp.setup({
 	sources = {
-		{ name = 'nvim_lsp' },
+		{
+			name = 'nvim_lsp',
+		},
 	},
 	snippet = {
 		expand = function(args)

@@ -21,3 +21,8 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
 vim.g.mapleader = " "
+
+vim.opt.clipboard = "unnamedplus"
+
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.o.completeopt = "menuone,noselect"
