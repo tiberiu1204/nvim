@@ -26,3 +26,23 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.o.completeopt = "menuone,noselect"
+
+
+-- Define a function to enable and disable eventignore
+function ToggleBufWritePreIgnore(enable)
+	if enable then
+		vim.cmd("set eventignore=BufWritePre")
+		print("BufWritePre events are now ignored.")
+	else
+		vim.cmd("set eventignore=")
+		print("BufWritePre events are now enabled.")
+	end
+end
+
+vim.api.nvim_create_user_command('FormatOff', function()
+	ToggleBufWritePreIgnore(true)
+end, {})
+
+vim.api.nvim_create_user_command('FormatOn', function()
+	ToggleBufWritePreIgnore(false)
+end, {})
